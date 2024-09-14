@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tour of DOM</title>
+  <link rel="stylesheet" href="styles/style.css">
+  <style>
+    ul > li {
+      color: deepskyblue;
+    }
+    #fruits-title {
+      color: black;
+    }
+    .beach-places {
+      color: darkorange;
+    }
+    .fruits-container li {
+      color: limegreen;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to Our Tour of DOM</h1>
+  </header>
+  <main>
+    <section>
+    <h2>DOM Stands for Document Object Model</h2>
+    <ul>
+      <li>D => Document</li>
+      <li>O => Object</li>
+      <li>M => MOdel</li>
+    </ul>
+    </section>
+    <section class="fruits-container">
+    <h2 id="fruits-title">Fruits I Like Most</h2>
+    <ul>
+      <li>Mango</li>
+      <li>Litchi</li>
+      <li>Orange</li>
+    </ul>
+    </section>
+    <section>
+    <h2 id="places-title">Places I Visited</h2>
+    <ul>
+      <li class="beach-places">Cox's Bazar</li>
+      <li class="beach-places">Kuakata</li>
+      <li>Bandarban</li>
+    </ul>
+    </section>
+  </main>
+  <script src="js/dom.js"></script>
+  <script>
+    // Option - 01: getElementsByTagName
+    const liCollection = document.getElementsByTagName("li");
+    // console.log(liCollection);
+    for (const li of liCollection) {
+      // console.log(li.innerText);
+    }
+    // Option - 02: getElementById
+    const fruitsTitle = document.getElementById("fruits-title");
+    fruitsTitle.innerText = "Fruits Title Changed by JS";
+    // Option - 03: getElementsByClassName
+    const places = document.getElementsByClassName("beach-places");
+    for (const place of places) {
+      console.log(place.innerText);
+    }
+    // Option - 04: querySelector
+    const singleLi = document.querySelector(".fruits-container li");
+    // Option - 05: querySelectorAll
+    const someLi = document.querySelectorAll(".fruits-container li");
+    for (const li of someLi) {
+      console.log(li.innerText);
+    }
+  </script>
+</body>
+</html>
