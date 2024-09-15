@@ -24,7 +24,7 @@
   <header>
     <h1>Welcome to Our Tour of DOM</h1>
   </header>
-  <main>
+  <main id="main-container">
     <section>
     <h2>DOM Stands for Document Object Model</h2>
     <ul>
@@ -41,9 +41,9 @@
       <li>Orange</li>
     </ul>
     </section>
-    <section>
+    <section id="places-container" class="large-text">
     <h2 id="places-title">Places I Visited</h2>
-    <ul>
+    <ul id="places-list">
       <li class="beach-places">Cox's Bazar</li>
       <li class="beach-places">Kuakata</li>
       <li>Bandarban</li>
@@ -51,6 +51,8 @@
     </section>
   </main>
   <script src="js/dom.js"></script>
+  <script src="js/append.js"></script>
+  <script src="js/styleInJs.js"></script>
   <script>
     // Option - 01: getElementsByTagName
     const liCollection = document.getElementsByTagName("li");
